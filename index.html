@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1140px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="myBtn">Create element</button>
+    <div class="container"></div>
+
+
+    <script>
+        // document.getElementById('myBtn').addEventListener('click', function () {
+        //     let randomCode = Math.floor(Math.random() * 1000001);
+        //     if (randomCode >= 100000) {
+        //         console.log(randomCode);
+
+        //         let mainDiv = document.createElement('div');
+        //         mainDiv.style.width = 'auto';
+        //         mainDiv.style.display = 'inline-block';
+        //         mainDiv.style.margin = '20px 20px 20px';
+
+        //         let newDiv = document.createElement('div');
+        //         newDiv.style.width = '70px';
+        //         newDiv.style.height = '70px';
+        //         newDiv.style.backgroundColor = '#' + randomCode;
+
+        //         let head = document.createElement('h5');
+        //         let headContent = document.createTextNode('HEX code:');
+        //         head.appendChild(headContent);
+
+        //         let para = document.createElement('p');
+        //         let paraContent = document.createTextNode('#' + randomCode);
+        //         para.appendChild(paraContent);
+
+        //         mainDiv.appendChild(newDiv);
+        //         mainDiv.appendChild(head);
+        //         mainDiv.appendChild(para);
+
+        //         let container = document.getElementsByClassName('container')[0];
+        //         container.appendChild(mainDiv);
+        //         container.style.border = '1px solid lightgreen';
+        //     }
+        // })
+
+
+        document.getElementById('myBtn').addEventListener('click', function () {
+            let red = Math.floor(Math.random() * 256);
+            let green = Math.floor(Math.random() * 256);
+            let blue = Math.floor(Math.random() * 256);
+
+            let mainDiv = document.createElement('div');
+            mainDiv.style.width = 'auto';
+            mainDiv.style.display = 'inline-block';
+            mainDiv.style.margin = '20px 20px 20px';
+
+            let newDiv = document.createElement('div');
+            newDiv.style.width = '70px';
+            newDiv.style.height = '70px';
+            newDiv.style.backgroundColor = `rgb(${red},${green},${blue})`;
+
+            let head = document.createElement('h5');
+            let headContent = document.createTextNode('RGB code:');
+            head.appendChild(headContent);
+
+            let para = document.createElement('p');
+            let paraContent = document.createTextNode(`rgb(${red},${green},${blue})`);
+            para.appendChild(paraContent);
+
+            mainDiv.appendChild(newDiv);
+            mainDiv.appendChild(head);
+            mainDiv.appendChild(para);
+
+            let container = document.getElementsByClassName('container')[0];
+            container.appendChild(mainDiv);
+            container.style.border = '1px solid lightgreen';
+        })
+    </script>
+
+</body>
+
+</html>
